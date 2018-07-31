@@ -1,0 +1,47 @@
+.banner {
+  width: 100%;
+}
+
+.category{
+  height: 500px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 50px 35px 10px 35px;
+}
+
+.categoryAlt{
+  height: 500px;
+  background: #e2cc00;
+  color: #fff;
+  text-align: center;
+  padding-top: 65px;
+  padding: 50px 35px 10px 35px;
+}
+
+.categoryImage{
+  width: 150px;
+  margin: 0 auto;
+}
+
+.seperator{
+  width: 55px;
+  background-color: white;
+  height: 4px;
+}
+
+.buttonEnter{
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.buttonEnter:hover{
+  background: #fff;
+  color: #000;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}

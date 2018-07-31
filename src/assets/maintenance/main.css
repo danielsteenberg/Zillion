@@ -1,0 +1,62 @@
+body{
+  background: url("./main.jpg") no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  font-family: 'open-sans';
+}
+
+.mainBlock{
+  margin: 35px 0px;
+  width: 70%;
+  background-color: #fff;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 5px 2px #fdd866;
+  box-shadow: 0px 0px 5px 2px #fdd866;
+  border-radius: 5px;
+  padding: 35px;
+}
+
+
+.btnSubmit{
+  background-color: #fbd664;
+  width: 100%;
+  color: #fff;
+}
+
+.headerCaption{
+  color: red;
+}
+
+.logo{
+  align-content: center;
+  width: 100%;
+}
+
+.logoImage{
+  width: 100px;
+}
+
+@media screen and (max-width: 1000px) {
+
+  h2{
+    font-size: 1em !important;
+  }
+
+  .logoImage{
+    width: 65px;
+  }
+
+  .mainBlock{
+    margin: 10px 0px;
+    width: 90%;
+    padding: 1px;
+  }
+}

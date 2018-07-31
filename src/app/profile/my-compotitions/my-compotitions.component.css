@@ -1,0 +1,90 @@
+.btnCustom{
+  background-color: #fdd866;
+  color: #fff;
+  margin: auto;
+  width: 100%;
+}
+
+.competitionImage{
+  width: 150px;
+  border-radius: 10px;
+}
+
+/*loader*/
+
+@keyframes loading {
+  0% {
+    width: 50pt;
+    height: 50pt;
+    margin-top: 0;
+  }
+  25% {
+    height: 4pt;
+    margin-top: 23pt;
+  }
+  50% {
+    width: 4pt;
+  }
+  75% {
+    width: 50pt;
+  }
+  100% {
+    width: 50pt;
+    height: 50pt;
+    margin-top: 0;
+  }
+}
+
+.loader {
+  width: 50pt;
+  height: 50pt;
+  border-radius: 100%;
+  border: #fbd664 4pt solid;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
+  animation: loading 1s infinite;
+}
+
+.load-text {
+  padding-top: 15px;
+  text-align: center;
+  font: 14pt "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: lighten(#6767fa, 75%);
+}
+
+.loaderContent{
+  height: 75px;
+}
+
+.activePager{
+  background-color: #fbd664;
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.allCompetitions{
+    animation: 0.3s ease-out 0s 1 slideInFromLeft;
+}
+
+@media only screen and (max-width: 992px) {
+  .allCompetitions{
+      animation: 0.3s ease-out 0s 1 slideInFromTop;
+  }
+}

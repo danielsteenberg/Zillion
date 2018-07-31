@@ -1,0 +1,193 @@
+.captionText{
+  font-weight: 200;
+  font-size: 1.5em;
+}
+
+.captionContent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.15);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.compotitionContent{
+  /*background-color: #fdd866;*/
+  /*width: 100vw;*/
+  padding: 25px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.15);
+}
+
+.loginImage{
+  text-align: center;
+  background-color: #3e3e40;
+  border-bottom: 2px solid #fbd664;
+}
+
+.logo{
+  width: 95px;
+  margin: 0 auto;
+}
+
+.row{
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.modal-title{
+  text-align: center;
+}
+
+.btnCustom{
+  width: 100%;
+  background-color: #fbd664;
+  border-color: #fbd664;
+  color: #fff;
+}
+
+.btnCustom:hover{
+  background-color: #ddb155;
+  border-color: #ddb155;
+  color: #fff;
+}
+
+.btnCancel{
+  width: 100%;
+}
+
+.nav{
+  background-color: #f5f5f5;
+  border: 1px solid #fdd866;
+  box-shadow: 0 2px 5px rgba(0,0,0,.15);
+  height: 70px;
+  padding: 15px;
+}
+
+.nav-link{
+  color: #000;
+}
+
+.active{
+  border-bottom: 2px solid red;
+}
+
+.nav-item:hover{
+  border-bottom: 2px solid red;
+}
+
+.activePager{
+  background-color: #fbd664;
+}
+
+.fa-search {
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  font-size: 15px;
+}
+
+.search{
+  text-indent: 30px;
+  width: 100%;
+}
+
+form{
+  position: relative;
+  width: 50%;
+}
+
+.alert-fixed {
+    position:fixed;
+    top: 95px;
+    left: 0px;
+    width: 100%;
+    z-index:99;
+    border-radius:0px;
+    text-align: center;
+}
+
+
+/*loader*/
+
+@keyframes loading {
+  0% {
+    width: 50pt;
+    height: 50pt;
+    margin-top: 0;
+  }
+  25% {
+    height: 4pt;
+    margin-top: 23pt;
+  }
+  50% {
+    width: 4pt;
+  }
+  75% {
+    width: 50pt;
+  }
+  100% {
+    width: 50pt;
+    height: 50pt;
+    margin-top: 0;
+  }
+}
+
+.loader {
+  width: 50pt;
+  height: 50pt;
+  border-radius: 100%;
+  border: #fbd664 4pt solid;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
+  animation: loading 1s infinite;
+}
+
+.load-text {
+  padding-top: 15px;
+  text-align: center;
+  font: 14pt "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: lighten(#6767fa, 75%);
+}
+
+.loaderContent{
+  margin-top: 50px;
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.allCompetitions{
+    animation: 0.3s ease-out 0s 1 slideInFromLeft;
+}
+
+@media only screen and (max-width: 992px) {
+  .allCompetitions{
+      animation: 0.3s ease-out 0s 1 slideInFromTop;
+  }
+
+  form{
+    width: 75% !important;
+  }
+}

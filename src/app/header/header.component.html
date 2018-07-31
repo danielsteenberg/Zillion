@@ -1,0 +1,73 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <img class="navLogo" src="./assets/common/logo.png" />
+    <a class="socialPop">
+      <div class="btn-group dropleft">
+        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-share-alt fa-2x" *ngIf="mobile"></i>
+        </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <a href="whatsapp://send?text=http://www.webdevsolutions.co.za/zillion/maintenance/" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="./assets/common/WhatsApp_Logo_6.png" /></a><br *ngIf="mobile" />
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.webdevsolutions.co.za/zillion/maintenance/" target="_blank" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="./assets/common/flogo_rgb_hex-brc-site-250.png" /></a><br *ngIf="mobile" />
+          <a href="https://twitter.com/intent/tweet/?text=Zillion!&url=http://www.webdevsolutions.co.za/zillion/maintenance/" target="_blank" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="./assets/common/Twitter_Social_Icon_Rounded_Square_Color.png" /></a><br *ngIf="mobile" />
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.webdevsolutions.co.za/zillion/maintenance/%2F&title=Zillion&source=http://www.webdevsolutions.co.za/zillion/maintenance/%2F&summary=Online%20Compitions" target="_blank" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="./assets/common/Logo-2C-34px-TM.png" /></a>
+        </div>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <a class="nav-link" routerLink="/zillion-compotitions" routerLinkActive="active">Zillion Compotitions</a>
+        </li>
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <a class="nav-link" routerLink="/skilled-based-compotitions" routerLinkActive="active">Skills Based Compotitions</a>
+        </li>
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <a class="nav-link" routerLink="/survey-based-compotitions" routerLinkActive="active">Survey Based Compotitions</a>
+        </li>
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <a class="nav-link" routerLink="/directory-compotitions-listings" routerLinkActive="active">Online Compotitions Directory</a>
+        </li>
+        <li class="nav-item login" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <a class="nav-link" *ngIf="!loggedIn" (click)="open(content)">LOGIN</a>
+          <a class="nav-link" *ngIf="loggedIn" (click)="logout()">LOG OUT</a>
+        </li>
+        <li>
+          <div *ngIf="users && loggedIn">
+            <i class="fa fa-user-circle fa-2x"></i>
+          </div>
+        </li>
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <div *ngIf="users && loggedIn">
+            <a class="nav-link" routerLink="/profile" routerLinkActive="active">{{users.name}} {{users.surname}}</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="row">
+    <div class="col-12 loginImage">
+      <img class="logo" src="./assets/common/logo.png" />
+    </div>
+  </div>
+  <app-auth></app-auth>
+  <div class="row">
+    <div class="col-12">
+      <button type="button" class="btn btn-danger btnCustom" (click)="c('Save click')">Close</button>
+    </div>
+  </div>
+</ng-template>
+
+<div class="alert alert-success alert-fixed" role="alert" *ngIf="success">
+  You have successfully logged in!
+</div>

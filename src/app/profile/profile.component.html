@@ -1,0 +1,46 @@
+<div class="profile">
+  <div class="header">
+    <div class="row">
+      <div class="col-12">
+        <img class="profilePhoto" *ngIf="user && user.profilePhoto" src="./assets/profilePhotos/20150822_122451-mi5ubvueeupx36shw19cubmnunlkd1ahdalj5rvjcg.jpg" />
+        <i class="fa fa-user-circle profilePhoto fa-4x" *ngIf="!user.profilePhoto"></i>
+        <h2 class="headerFont">{{user.name}} {{user.surname}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <ul class="nav nav-tabs" *ngIf="!mobile">
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="profile ? 'active' : ''" (click)="setProfile()">Profile Details</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="compotitions ? 'active' : ''" (click)="setCompotition()">My Compotitions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [ngClass]="support ? 'active' : ''" (click)="setSupport()">Support</a>
+      </li>
+    </ul>
+    <ul class="nav nav-tabs" *ngIf="mobile">
+      <li class="dropdown nav-item">
+        <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">Menu
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="profile ? 'active' : ''" (click)="setProfile()">Profile Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="compotitions ? 'active' : ''" (click)="setCompotition()">My Compotitions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [ngClass]="support ? 'active' : ''" (click)="setSupport()">Support</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div class="userDetail">
+      <app-details *ngIf="profile"></app-details>
+      <app-my-compotitions *ngIf="compotitions"></app-my-compotitions>
+      <app-support *ngIf="support"></app-support>
+    </div>
+  </div>
+</div>

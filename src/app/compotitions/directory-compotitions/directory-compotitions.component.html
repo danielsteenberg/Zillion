@@ -1,0 +1,98 @@
+<div class="alert alert-success alert-fixed" *ngIf="successMessage" role="alert">
+  Thank You {{user.name}} {{user.surname}}, you have successfully been entered into the compition!
+</div>
+<div class="alert alert-danger alert-fixed" *ngIf="errorMessage" role="alert">
+  You are not logged in, please login before entering a competition!
+</div>
+<ul class="nav justify-content-center">
+  <!-- <li class="nav-item">
+    <a class="nav-link active" href="#">All Deals</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Clothing</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Food</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Beauty</a>
+  </li> -->
+    <form class="form-inline my-2 my-lg-0">
+      <span class="fa fa-search"></span>
+      <input class="form-control mr-sm-2 search" name="searchTerm" type="search" placeholder="Search Competitions" [(ngModel)]="term">
+    </form>
+</ul>
+<div class="compotitionContent">
+  <div class="row">
+    <div class="col-12 captionContent">
+      <h2 [ngClass]="{captionText : mobile}">
+        Welcome to the <strong>ZILLION COMPETITIONS</strong> section.
+      </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 captionContent">
+      <h2 [ngClass]="{captionText : mobile}">
+        It’s  FREE, so enter as many competitions as you like. Zillions of good luck to you!
+      </h2>
+    </div>
+  </div>
+<hr />
+  <!-- Loader -->
+  <div *ngIf="loader">
+    <div class="loader">
+    </div>
+    <div class="load-text">
+    Loading...
+    </div>
+  </div>
+
+  <div class="row" *ngIf="!term">
+    <div [ngClass]="mobile ? 'col-12' : 'col-4'" *ngFor="let image of selectedContent">
+      <div class="card allCompetitions">
+        <img class="card-img-top" src="./assets/zillionCompotitions/{{image.url}}" (click)="open(enterComp, image)">
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="term">
+    <div [ngClass]="mobile ? 'col-12' : 'col-4'" *ngFor="let image of allCompotitions |filter:term">
+      <div class="card allCompetitions">
+        <img class="card-img-top" src="./assets/zillionCompotitions/{{image.url}}" (click)="open(enterComp, image)">
+      </div>
+    </div>
+  </div>
+  <hr />
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-end">
+      <li class="page-item" [ngClass]="{disabled : firstPage}">
+        <a class="page-link"(click)="prevPage()">Previous</a>
+      </li>
+      <li class="page-item" *ngFor="let item of pagedItems; let i = index">
+        <a class="page-link" [ngClass]="{activePager : i == setActive}" (click)="selectedContentItems(i)">
+          {{i + 1}}
+        </a>
+      </li>
+      <li class="page-item" [ngClass]="{disabled : lastPage}">
+        <a class="page-link" (click)="netPage()">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<ng-template #enterComp let-c="close" let-d="dismiss">
+  <div class="row">
+    <div class="col-12 loginImage">
+      <img class="logo" src="./assets/common/logo.png" />
+    </div>
+  </div>
+  <div class="modal-body">
+    <h4 class="modal-title">Hi {{user.name}} {{user.surname}}</h4>
+    <hr />
+    <h4 class="modal-title">You are about to enter the {{this.competitionName}} Competiton, Would you like to continue?</h4>
+  </div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-default btnCustom" (click)="enterCompetition(); c('Save click')">ENTER</button>
+      <button type="button" class="btn btn-danger btnCancel" (click)="c('Save click')">CLOSE</button>
+  </div>
+</ng-template>
