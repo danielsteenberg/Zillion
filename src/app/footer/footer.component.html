@@ -155,10 +155,10 @@
                   Click here
                 </a>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <a href="whatsapp://send?text=http://www.webdevsolutions.co.za/zillion/" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="http://webdevsolutions.co.za/zillion/assets/common/WhatsApp_Logo_6.png" /></a><br *ngIf="mobile" />
-                  <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.webdevsolutions.co.za/zillion/" target="_blank" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="http://webdevsolutions.co.za/zillion/assets/common/flogo_rgb_hex-brc-site-250.png" /></a><br *ngIf="mobile" />
-                  <a href="https://twitter.com/intent/tweet/?text=Zillion!&url=http://www.webdevsolutions.co.za/zillion/" target="_blank" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="http://webdevsolutions.co.za/zillion/assets/common/Twitter_Social_Icon_Rounded_Square_Color.png" /></a><br *ngIf="mobile" />
-                  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.webdevsolutions.co.za/zillion/%2F&title=Zillion&source=http://www.webdevsolutions.co.za/zillion/maintenance/%2F&summary=Online%20Compitions" target="_blank" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="http://webdevsolutions.co.za/zillion/assets/common/Logo-2C-34px-TM.png" /></a>
+                  <a href="whatsapp://send?text=http://www.webdevsolutions.co.za/zillion/" data-action="share/whatsapp/share"><img class="socialShare" src="http://webdevsolutions.co.za/zillion/assets/common/WhatsApp_Logo_6.png" /></a><br />
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.webdevsolutions.co.za/zillion/" target="_blank" data-action="share/whatsapp/share"><img class="socialShare" src="http://webdevsolutions.co.za/zillion/assets/common/flogo_rgb_hex-brc-site-250.png" /></a><br />
+                  <a href="https://twitter.com/intent/tweet/?text=Zillion!&url=http://www.webdevsolutions.co.za/zillion/" target="_blank" data-action="share/whatsapp/share"><img class="socialShare" src="http://webdevsolutions.co.za/zillion/assets/common/Twitter_Social_Icon_Rounded_Square_Color.png" /></a><br />
+                  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.webdevsolutions.co.za/zillion/%2F&title=Zillion&source=http://www.webdevsolutions.co.za/zillion/maintenance/%2F&summary=Online%20Compitions" target="_blank" data-action="share/whatsapp/share"><img class="socialShare" src="http://webdevsolutions.co.za/zillion/assets/common/Logo-2C-34px-TM.png" /></a>
                 </div>
               </div>
             </a> to refer your friends now. Another way you could refer your friends is by liking us on Facebook or sharing the website <a href="www.zillion.co.za" target="_blank">www.zillion.co.za</a> on your Facebook page.
@@ -291,25 +291,19 @@
         <form #loginForm="ngForm">
           <div class="form-group">
             <label for="email">Email address</label>
-            <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="email" required>
+            <input type="email" class="form-control" name="email" placeholder="Enter email" required>
           </div>
           <div class="form-group">
             <label for="email">Subject</label>
-            <input type="text" class="form-control" name="email" placeholder="Enter Subject" [(ngModel)]="email" required>
+            <input type="text" class="form-control" name="email" placeholder="Enter Subject" required>
           </div>
           <div class="form-group">
             <label for="password">Message</label>
-            <textarea rows="4" cols="30" class="form-control" name=password placeholder="Message" [(ngModel)]="password" required></textarea>
+            <textarea rows="4" cols="30" class="form-control" name=password placeholder="Message" required></textarea>
           </div>
           <div class="row">
             <div class="col-12 messageBtnGrp">
-              <button type="button" [disabled]="!loginForm.valid" class="btn btn-default btnCustom" *ngIf="!sending" data-dismiss="modal" (click)="login(loginForm)">SEND</button>
-              <button type="button" class="btn btn-default btnCustom" *ngIf="sending">
-                <div class="spinner" *ngIf="sending">
-                  <div class="double-bounce1"></div>
-                  <div class="double-bounce2"></div>
-                </div>
-              </button>
+              <button type="button" [disabled]="!loginForm.valid" class="btn btn-default btnCustom" data-dismiss="modal">SEND</button>
             </div>
           </div>
         </form>
