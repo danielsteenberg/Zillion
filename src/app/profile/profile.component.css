@@ -68,3 +68,14 @@
   border-color: #fdd866 !important;
   color: #fff !important;
 }
+
+.editIcon{
+  position: absolute;
+  top: 50px;
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+.editIcon:hover{
+  color: #fdd866 !important;
+}

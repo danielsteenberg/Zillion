@@ -85,16 +85,16 @@
   background-color: #fbd664;
 }
 
-.fa-search {
-  position: absolute;
-  top: 10px;
-  left: 16px;
-  font-size: 15px;
+.input-group-prepend{
+  height: 39px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .search{
-  text-indent: 30px;
-  width: 100%;
+  width: 90%;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 form{

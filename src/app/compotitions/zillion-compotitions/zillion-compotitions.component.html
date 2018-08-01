@@ -17,8 +17,10 @@
   <li class="nav-item">
     <a class="nav-link" href="#">Beauty</a>
   </li> -->
-  <form class="form-inline my-2 my-lg-0">
-    <span class="fa fa-search"></span>
+  <form class="form-inline my-2 my-lg-0 mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1"><span class="fa fa-search"></span></span>
+    </div>
     <input class="form-control mr-sm-2 search" name="searchTerm" type="search" placeholder="Search Competitions" [(ngModel)]="term">
   </form>
 </ul>
@@ -52,7 +54,7 @@
   <div class="row" *ngIf="!term">
     <div [ngClass]="mobile ? 'col-12' : 'col-4'" *ngFor="let image of selectedContent">
       <div class="card allCompetitions">
-        <img class="card-img-top" src="./assets/zillionCompotitions/{{image.url}}" (click)="open(enterComp, image)">
+        <img class="card-img-top rounded img-thumbnail" src="./assets/zillionCompotitions/{{image.url}}" (click)="open(enterComp, image)">
       </div>
     </div>
   </div>
@@ -60,7 +62,7 @@
   <div class="row" *ngIf="term">
     <div [ngClass]="mobile ? 'col-12' : 'col-4'" *ngFor="let image of allCompotitions |filter:term">
       <div class="card allCompetitions">
-        <img class="card-img-top" src="./assets/zillionCompotitions/{{image.url}}" (click)="open(enterComp, image)">
+        <img class="card-img-top rounded img-thumbnail" src="./assets/zillionCompotitions/{{image.url}}" (click)="open(enterComp, image)">
       </div>
     </div>
   </div>

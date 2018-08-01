@@ -36,7 +36,7 @@
           <a class="nav-link" routerLink="/directory-compotitions-listings" routerLinkActive="active">Online Compotitions Directory</a>
         </li>
         <li class="nav-item login" data-toggle="collapse" data-target=".navbar-collapse.show">
-          <a class="nav-link" *ngIf="!loggedIn" (click)="open(content)">LOGIN</a>
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal" *ngIf="!loggedIn">LOGIN</a>
           <a class="nav-link" *ngIf="loggedIn" (click)="logout()">LOG OUT</a>
         </li>
         <li>
@@ -54,7 +54,7 @@
   </div>
 </nav>
 
-<ng-template #content let-c="close" let-d="dismiss">
+<!-- <ng-template #content let-c="close" let-d="dismiss">
   <div class="row">
     <div class="col-12 loginImage">
       <img class="logo" src="./assets/common/logo.png" />
@@ -66,7 +66,26 @@
       <button type="button" class="btn btn-danger btnCustom" (click)="c('Save click')">Close</button>
     </div>
   </div>
-</ng-template>
+</ng-template> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="row">
+          <div class="col-12 loginImage">
+            <img class="logo" src="./assets/common/logo.png" />
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <app-auth></app-auth>
+        <button type="button" class="btn btn-danger cancelBtn" data-dismiss="modal" #closeModal>Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="alert alert-success alert-fixed" role="alert" *ngIf="success">
   You have successfully logged in!

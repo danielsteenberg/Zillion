@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, ViewChild, ElementRef } from '@angular/core';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { AuthenticationService } from '../shared/services/authentication.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
   desktop: boolean = true;
   modalReference: NgbModalRef;
   success: boolean = false;
+  @ViewChild('closeModal') closeModal: ElementRef;
 
   constructor(private modalService: NgbModal, private route: ActivatedRoute, private router: Router, private authenticationService: AuthenticationService, private usersService: UsersService, private deviceService: DeviceDetectorService) {
     this.getDeviceType();
@@ -68,7 +69,7 @@ export class HeaderComponent implements OnInit {
     }
 
   close(){
-    this.modalReference.close();
+    this.closeModal.nativeElement.click();
   }
 
   private getDismissReason(reason: any): string {
