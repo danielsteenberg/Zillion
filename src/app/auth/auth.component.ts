@@ -9,6 +9,7 @@ export class AuthComponent implements OnInit {
 
   login: boolean = true;
   register: boolean = false;
+  forgotPassword: boolean = false;
 
   constructor() { }
 
@@ -18,10 +19,18 @@ export class AuthComponent implements OnInit {
   goToRegister(){
     this.login = false;
     this.register = true;
+    this.forgotPassword = false;
   }
 
   goToLogin(){
     this.login = true;
     this.register = false;
+    this.forgotPassword = false;
+  }
+
+  goToForgotPassword(){
+    this.login = false;
+    this.register = false;
+    this.forgotPassword = true;
   }
 }

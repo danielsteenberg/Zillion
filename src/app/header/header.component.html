@@ -1,57 +1,66 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <img class="navLogo" src="./assets/common/logo.png" />
-    <a class="socialPop">
-      <div class="btn-group dropleft">
-        <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-share-alt fa-2x" *ngIf="mobile"></i>
-        </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <a href="whatsapp://send?text=http://www.webdevsolutions.co.za/zillion/maintenance/" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="./assets/common/WhatsApp_Logo_6.png" /></a><br *ngIf="mobile" />
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.webdevsolutions.co.za/zillion/maintenance/" target="_blank" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="./assets/common/flogo_rgb_hex-brc-site-250.png" /></a><br *ngIf="mobile" />
-          <a href="https://twitter.com/intent/tweet/?text=Zillion!&url=http://www.webdevsolutions.co.za/zillion/maintenance/" target="_blank" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="./assets/common/Twitter_Social_Icon_Rounded_Square_Color.png" /></a><br *ngIf="mobile" />
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.webdevsolutions.co.za/zillion/maintenance/%2F&title=Zillion&source=http://www.webdevsolutions.co.za/zillion/maintenance/%2F&summary=Online%20Compitions" target="_blank" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="./assets/common/Logo-2C-34px-TM.png" /></a>
-        </div>
-      </div>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-          <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-        </li>
-        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-          <a class="nav-link" routerLink="/zillion-compotitions" routerLinkActive="active">Zillion Compotitions</a>
-        </li>
-        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-          <a class="nav-link" routerLink="/skilled-based-compotitions" routerLinkActive="active">Skills Based Compotitions</a>
-        </li>
-        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-          <a class="nav-link" routerLink="/survey-based-compotitions" routerLinkActive="active">Survey Based Compotitions</a>
-        </li>
-        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-          <a class="nav-link" routerLink="/directory-compotitions-listings" routerLinkActive="active">Online Compotitions Directory</a>
-        </li>
-        <li class="nav-item login" data-toggle="collapse" data-target=".navbar-collapse.show">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal" *ngIf="!loggedIn">LOGIN</a>
-          <a class="nav-link" *ngIf="loggedIn" (click)="logout()">LOG OUT</a>
-        </li>
-        <li>
-          <div *ngIf="users && loggedIn">
-            <i class="fa fa-user-circle fa-2x"></i>
-          </div>
-        </li>
-        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-          <div *ngIf="users && loggedIn">
-            <a class="nav-link" routerLink="/profile" routerLinkActive="active">{{users.name}} {{users.surname}}</a>
-          </div>
-        </li>
-      </ul>
+  <div class="row">
+    <div class="col-1">
+      <img class="navLogo" src="./assets/common/logo.png" />
     </div>
-  </div>
+    <div class="col-11">
+      <a class="socialPop">
+        <div class="btn-group dropleft">
+          <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-share-alt fa-2x" *ngIf="mobile"></i>
+          </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <a href="whatsapp://send?text=http://www.webdevsolutions.co.za/zillion/maintenance/" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="./assets/common/WhatsApp_Logo_6.png" /></a><br *ngIf="mobile" />
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.webdevsolutions.co.za/zillion/maintenance/" target="_blank" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="./assets/common/flogo_rgb_hex-brc-site-250.png" /></a><br *ngIf="mobile" />
+            <a href="https://twitter.com/intent/tweet/?text=Zillion!&url=http://www.webdevsolutions.co.za/zillion/maintenance/" target="_blank" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="./assets/common/Twitter_Social_Icon_Rounded_Square_Color.png" /></a><br *ngIf="mobile" />
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.webdevsolutions.co.za/zillion/maintenance/%2F&title=Zillion&source=http://www.webdevsolutions.co.za/zillion/maintenance/%2F&summary=Online%20Compitions" target="_blank" data-action="share/whatsapp/share"><img [ngClass]="mobile ? 'socialShareMobile' : 'socialShare'" src="./assets/common/Logo-2C-34px-TM.png" /></a>
+          </div>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <a class="nav-link" routerLink="/zillion-competitions" routerLinkActive="active">Zillion Competitions</a>
+          </li>
+          <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <a class="nav-link" routerLink="/skilled-based-competitions" routerLinkActive="active">Skills Based Competitions</a>
+          </li>
+          <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <a class="nav-link" routerLink="/survey-based-competitions" routerLinkActive="active">Survey Based Competitions</a>
+          </li>
+          <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <a class="nav-link" routerLink="/directory-competitions-listings" routerLinkActive="active">Online Competitions Directory</a>
+          </li>
+          <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <a class="nav-link" data-toggle="modal" data-target="#faqModal">FAQ's</a>
+          </li>
+          <li class="nav-item login" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <a class="nav-link" data-toggle="modal" data-target="#exampleModal" *ngIf="!loggedIn">LOGIN</a>
+            <a class="nav-link" *ngIf="loggedIn" (click)="logout()">LOG OUT</a>
+          </li>
+          <li>
+            <div *ngIf="users && loggedIn">
+              <i class="fa fa-user-circle fa-2x"></i>
+            </div>
+          </li>
+          <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+            <div *ngIf="users && loggedIn">
+              <a class="nav-link" routerLink="/profile" routerLinkActive="active">{{users.name}} {{users.surname}}</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+
+
 </nav>
 
 <!-- <ng-template #content let-c="close" let-d="dismiss">
@@ -89,4 +98,239 @@
 
 <div class="alert alert-success alert-fixed" role="alert" *ngIf="success">
   You have successfully logged in!
+</div>
+
+
+<!-- FAQ's Modal -->
+<div class="modal fade" id="faqModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="row">
+          <div class="col-12 modalImage">
+            <img class="logo" src="./assets/common/logo.png" />
+          </div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <h2>Frequently Asked Questions:</h2>
+        <hr />
+        <i>
+          <h5>1.	About Zillion Competitions:</h5>
+        </i>
+        <p>
+          Zillion Competitions has been voted South Africa’s favourite competitions portal. Zillion Competitions has been around and drawing winners since 2010. Zillion Competitions is fun, free, and easy. Zillion is the first website in South Africa to have 4 different categories for you to choose from and enter.
+        </p>
+        <hr />
+          <i>
+            <h5>2.	How do I register?</h5>
+          </i>
+          <ul>
+            <li>
+              Step 1: Go to <a href="www.zillion.co.za" target="_blank">www.zillion.co.za</a>
+            </li>
+            <li>
+              Step 2: Click register and fill in your details. You will then receive <br> an e-mail verification for security purposes.
+            </li>
+            <li>
+              Step 3: Go to your e-mail and click the link so that we know it’s you.
+            </li>
+            <li>
+              Step 4: Now you can log in and enter as many competitions as you like.
+            </li>
+          </ul>
+          <hr />
+          <i>
+            <h5>3.	What benefits do I get when I register?</h5>
+          </i>
+          <ul>
+            <li>
+              3.1.	Zillion Competitions takes your <b>privacy seriously</b>. It is for this reason we require you to register, then <b>click the link on your email</b> to confirm your e-mail address belongs to you.
+            </li>
+            <li>
+              3.2.	Every time you log in you will need a <b>username and password</b> for security purposes.
+            </li>
+            <li>
+              3.3.	It’s fully automated so it’s easier for you. There are so many competitions on <a href="www.zillion.co.za" target="_blank">www.zillion.co.za</a> , so if you register, all your information will be pre-populated in each entry form, so this means <b>you don’t  have to type your details in over and over again</b> for each competition. All you do is click the “I accept the terms & conditions” button as well as the “enter” button.
+            </li>
+          </ul>
+          <hr />
+          <i>
+            <h5>4.	Why do I fill in information about myself when I register?</h5>
+          </i>
+          <p>
+            By filling in information such as your favourite clothing brands for example, Zillion Competitions can get to know you better, and can try put up competitions which suit our Zillionaires wants and needs for example.
+          </p>
+          <hr />
+          <i>
+            <h5>5.	Why should I keep my details updated?</h5>
+          </i>
+          <ul>
+            <li>
+              5.1.	Should Zillion Competitions draw your name as a winner, <b>we will need to contact you</b>.
+            </li>
+            <li>
+              5.2.	You <b>only have 72 hours to respond</b> (excluding weekends and public holidays). Should we not get hold of you within this time frame; a new winner will be drawn in your place.
+            </li>
+            <li>
+              5.3.	We might also from time-to-time <b>notify you of new competitions or exciting news</b>.
+            </li>
+          </ul>
+          <hr />
+          <i>
+            <h5>6.	Can I win more than once?</h5>
+          </i>
+          <p>
+            <b>YES</b> you definitely can. So keep entering to increase your chances of winning.
+          </p>
+          <hr />
+          <i>
+            <h5>7.	How many competitions can I enter?</h5>
+          </i>
+          <p>
+            Please feel free to enter as many competitions in all the categories as you like. There are 4 categories of competitions on <a href="www.zillion.co.za" target="_blank">www.zillion.co.za</a> to give you a variety of fun competitions to choose from:
+          </p>
+          <ul>
+            <li>
+              7.1.	<b>Zillion Competitions:</b> 	Here you have new and exciting competitions to enter.
+            </li>
+            <li>
+              7.2.	<b>Skill Based Competitions:</b>	This is where the fun starts. You get to use your brain to see if you can solve the riddles and puzzles for example, before entering the competition. Only the correct answers will be accepted.
+            </li>
+            <li>
+              7.3.	<b>Survey Based Competitions:</b>	Fill in only 5 questions to enter a competition.
+            </li>
+            <li>
+              7.4.	<b>Free Online Competitions:</b>	We place most of South Africa’s popular competitions in 1 place for you so that you don’t have to search online, saving you time which allows you to see what you are interested in and enter what you feel is relevant to you.
+            </li>
+          </ul>
+          <hr />
+          <i>
+            <h5>8.	Can I refer my friends?</h5>
+          </i>
+          <p>
+            Zillion Competitions would love it if you could refer your friends.
+            <a class="socialPop">
+              <div class="btn-group dropup">
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Click here
+                </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <a href="whatsapp://send?text=http://www.webdevsolutions.co.za/zillion/" data-action="share/whatsapp/share"><img class="socialShare" src="http://webdevsolutions.co.za/zillion/assets/common/WhatsApp_Logo_6.png" /></a><br />
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.webdevsolutions.co.za/zillion/" target="_blank" data-action="share/whatsapp/share"><img class="socialShare" src="http://webdevsolutions.co.za/zillion/assets/common/flogo_rgb_hex-brc-site-250.png" /></a><br />
+                  <a href="https://twitter.com/intent/tweet/?text=Zillion!&url=http://www.webdevsolutions.co.za/zillion/" target="_blank" data-action="share/whatsapp/share"><img class="socialShare" src="http://webdevsolutions.co.za/zillion/assets/common/Twitter_Social_Icon_Rounded_Square_Color.png" /></a><br />
+                  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.webdevsolutions.co.za/zillion/%2F&title=Zillion&source=http://www.webdevsolutions.co.za/zillion/maintenance/%2F&summary=Online%20Compitions" target="_blank" data-action="share/whatsapp/share"><img class="socialShare" src="http://webdevsolutions.co.za/zillion/assets/common/Logo-2C-34px-TM.png" /></a>
+                </div>
+              </div>
+            </a> to refer your friends now. Another way you could refer your friends is by liking us on Facebook or sharing the website <a href="www.zillion.co.za" target="_blank">www.zillion.co.za</a> on your Facebook page.
+          </p>
+          <hr />
+          <i>
+            <h5>9.	How do I know if I have won?</h5>
+          </i>
+          <p>
+            Zillion competitions will:
+          </p>
+          <ul>
+            <li>
+              9.1.	Send you an <b>SMS</b> notification;
+            </li>
+            <li>
+              9.2.	Send you a <b>branded e-mail form</b>; which you need to complete. <br /> This will be sent from <a href="mailto:draw@zillion.co.za">draw@zillion.co.za</a> only;
+            </li>
+            <li>
+              9.3.	<b>Call you</b> to let you know you are a winner and confirm that you received the e-mail.
+            </li>
+          </ul>
+          <hr />
+          <i>
+            <h5>10.	How do I know it’s Zillion Competitions informing me that I have won and check if it’s a scam or not?</h5>
+          </i>
+          <ul>
+            <li>
+              10.1.	Zillion Competitions will send you an e-mail from <a href="mailto:draw@zillion.co.za">draw@zillion.co.za</a>. <b>No other e-mail address</b>.
+            </li>
+            <li>
+              10.2.	When Zillion Competitions calls you to notify you, you will be asked certain <b>security questions</b> which you have   submitted on the website (<a href="www.zillion.co.za">www.zillion.co.za</a> ) to ensure it is you.
+            </li>
+            <li>
+              10.3.	If you are unsure at any stage, please send an e-mail to <a href="mailto:support@zillion.co.za">support@zillion.co.za</a> and we will verify whether or not it is correct.
+            </li>
+            <li>
+              10.4.	Please notify Zillion Competitions of any suspicious activities by reporting it via e-mail to <a href="mailto:support@zillion.co.za">support@zillion.co.za</a>
+            </li>
+            <li>
+              10.5.	In the event it is a cash prize; we will only ask for you to submit your bank details <b>(NOT any bank login details or passwords)</b>. This is simply for Zillion Competitions to deposit the money into your bank account. We will only ask for:
+            </li>
+            <ul>
+              <li>
+                -	Account Holder: Initial & Surname
+              </li>
+              <li>
+                -	Name of Bank
+              </li>
+              <li>
+                -	Type of account
+              </li>
+              <li>
+                -	Account number
+              </li>
+              <li>
+                -	Branch code
+              </li>
+            </ul>
+          </ul>
+          <hr />
+          <i>
+            <h5>11.	What if I don’t have a bank account if I win a cash prize?</h5>
+          </i>
+          <p>
+            Should you not have a bank account, you can ask someone you trust if Zillion Competitions can deposit the money into their account for you, and then draw it for you. You will however need to ask for a <b>letter from the bank account holder</b> stating their bank details, and that the bank account holder gives permission for you to use the account. Zillion Competitions will advise you on the process though.
+          </p>
+          <hr />
+          <i>
+            <h5>12.	What is the age restriction and qualifying criteria to register as a Zillionaire on the website <a href="www.zillion.co.za" target="_blank">www.zillion.co.za</a>?</h5>
+          </i>
+          <ul>
+            <li>
+              12.1.	You need to be <b>18 years or older</b>. Don’t worry if you are under 18 years; you can always ask your mom, dad or guardian to register and enter competitions for you.
+            </li>
+            <li>
+              12.2.	You need to be a <b>South African citizen, with a green bar coded ID</b>.</li>
+            <li>
+              12.3.	You may <b>not</b> enter if you are or have been an employee of Zillion Competitions.
+            </li>
+            <li>
+              12.4.	You will need to <b>fill in and sign a form</b>; we will notify you of what is required.
+            </li>
+            <li>
+              12.5.	Zillions <b>Terms and Conditions apply</b> to all competitions which you enter on the website, along with any other brand/product/services/3rd party Terms and Conditions which may apply to the relevant competitions.
+            </li>
+            <li>
+              12.6.	You can win more than once, so keep entering to increase your chances of winning.
+            </li>
+          </ul>
+          <hr />
+          <i>
+            <h5>13.	Why could I sometimes not previously see all the latest competitions?</h5>
+          </i>
+          <p>
+            Some devices, tablets and laptops might have not been compatible with the website, which means you would have to had clicked the refresh button on the top right of your online search bar. <b>This has been rectified for your convenience</b>.
+          </p>
+          <p>
+            Zillion Competitions also experienced <b>high volumes</b> of Zillionaires active on the website at the same time, this could have caused the loading to be slow. We have re-done our new website on a specific platform to handle the volumes accordingly.
+          </p>
+          <hr />
+          <i>
+            <h5>14.	What are the terms and conditions?</h5>
+          </i>
+          <p>
+            <a href="www.zillion.co.za" target="_blank">Click Here</a> to see the Terms and Conditions.
+          </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger cancelBtn" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>

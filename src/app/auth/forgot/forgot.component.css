@@ -1,0 +1,21 @@
+.btnCustom{
+  width: 100%;
+  background-color: #fbd664;
+  border-color: #fbd664;
+  color: #fff;
+}
+
+.btnCustom:hover{
+  background-color: #ddb155;
+  border-color: #ddb155;
+  color: #fff;
+}
+
+.alert-fixed {
+    position:fixed;
+    top: 95px;
+    left: 0px;
+    width: 100%;
+    z-index:9999;
+    border-radius:0px
+}

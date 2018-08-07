@@ -1,9 +1,13 @@
 <div class="container">
   <h2 *ngIf="login">LOGIN</h2>
   <h2 *ngIf="register">SIGN UP</h2>
-  <small *ngIf="login">Do you have an account? <a (click)="goToRegister()">SIGN UP</a></small><br />
-  <small *ngIf="login">Forgot your password? <a (click)="goToRegister()">Reset Password Here</a></small>
-  <small *ngIf="register">Do not have an account? <a (click)="goToLogin()">LOGIN</a></small>
+  <h2 *ngIf="forgotPassword">Forgot Password</h2>
+  <hr />
+  <small *ngIf="register || forgotPassword">Do you have an account? <a (click)="goToLogin()">LOGIN</a><br /></small>
+  <small *ngIf="login || !forgotPassword && !register">Forgot your password? <a (click)="goToForgotPassword()">Reset Password Here</a><br /></small>
+  <small *ngIf="login || forgotPassword">Do <strong>not</strong> have an account? <a (click)="goToRegister()">SIGN UP</a><br /></small>
+  <hr />
 </div>
 <app-login *ngIf="login"></app-login>
 <app-register *ngIf="register"></app-register>
+<app-forgot *ngIf="forgotPassword"></app-forgot>

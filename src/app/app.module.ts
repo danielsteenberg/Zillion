@@ -33,15 +33,17 @@ import { AuthGuard } from './shared/gaurds/auth.gaurd';
 import { JwtInterceptor } from './shared/helpers/jwt.interceptor';
 import { UserService } from './shared/services/user.service';
 import { AuthenticationService } from './shared/services/authentication.service';
+import { ResetUserPasswordService } from './shared/services/reset-user-password.service';
 import { SupportComponent } from './profile/support/support.component';
 import { FilterMyCompetitionsPipe } from './shared/pipes/filter-my-competitions.pipe';
+import { ForgotComponent } from './auth/forgot/forgot.component';
 
 
 const appRoutes: Routes = [
-  { path: 'zillion-compotitions', component: ZillionCompotitionsComponent },
-  { path: 'skilled-based-compotitions', component: SkilledBasedCompotitionsComponent },
-  { path: 'survey-based-compotitions', component: SurveyBasedCompotitionsComponent },
-  { path: 'directory-compotitions-listings', component: DirectoryCompotitionsComponent },
+  { path: 'zillion-competitions', component: ZillionCompotitionsComponent },
+  { path: 'skilled-based-competitions', component: SkilledBasedCompotitionsComponent },
+  { path: 'survey-based-competitions', component: SurveyBasedCompotitionsComponent },
+  { path: 'directory-competitions-listings', component: DirectoryCompotitionsComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'home', component: CompotitionsListComponent },
   { path: '', redirectTo: '/home',pathMatch: 'full' },
@@ -69,7 +71,8 @@ const appRoutes: Routes = [
     DetailsComponent,
     MyCompotitionsComponent,
     SupportComponent,
-    FilterMyCompetitionsPipe
+    FilterMyCompetitionsPipe,
+    ForgotComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -86,6 +89,7 @@ const appRoutes: Routes = [
     CompotitionsService,
     AuthGuard,
     AuthenticationService,
+    ResetUserPasswordService,
     UserService,
     {
         provide: HTTP_INTERCEPTORS,

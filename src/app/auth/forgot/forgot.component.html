@@ -1,0 +1,17 @@
+<div class="alert alert-danger" *ngIf="errorMessage" role="alert">
+  Email Not Found
+</div>
+<div class="alert alert-success" *ngIf="successMessage" role="alert">
+  An email has been sent to your email address to reset your password.
+</div>
+<form #forgotForm="ngForm">
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" name="email" placeholder="Enter email address" [(ngModel)]="email" required>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <button type="button" [disabled]="!forgotForm.valid" class="btn btn-default btnCustom" (click)="resetForm(forgotForm)">RESET</button>
+    </div>
+  </div>
+</form>

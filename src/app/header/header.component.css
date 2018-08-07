@@ -142,3 +142,14 @@
     margin-right: 20px;
     margin-left: 20px;;
 }
+
+.modalImage{
+  text-align: center;
+  background-color: #3e3e40;
+  border-bottom: 2px solid #fbd664;
+}
+
+.modal-header{
+  display: block;
+  padding: 0;
+}

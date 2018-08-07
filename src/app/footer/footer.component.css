@@ -251,3 +251,8 @@ footer{
 .messageBtnGrp{
 	padding: 0px !important;
 }
+
+.provider{
+	width: 150px;
+	margin: 10px 50px;
+}

@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
         this.authenticationService.login(this.userDetails)
             .subscribe(
                 (data) => {
-                  console.log(data)
                   this.sending = false;
                     //this.router.navigate(['/home']);
                     if(data){
