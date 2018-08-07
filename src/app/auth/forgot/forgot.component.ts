@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 
 import { HeaderComponent } from '../../header/header.component';
 import { ResetUserPasswordService } from '../../shared/services/reset-user-password.service';
+import { User } from '../../shared/models/user';
 
 @Component({
   selector: 'app-forgot',
@@ -11,6 +12,7 @@ import { ResetUserPasswordService } from '../../shared/services/reset-user-passw
 })
 export class ForgotComponent implements OnInit {
 
+  userDetails: User = new User();
   email: string;
   errorMessage: boolean = false;
   successMessage: boolean = false;
@@ -21,27 +23,23 @@ export class ForgotComponent implements OnInit {
   }
 
   resetForm(resetForm: NgForm) {
-        this.resetUserPasswordService.resetUserPassword(this.email)
+    this.userDetails.email = this.email;
+        this.resetUserPasswordService.resetUserPassword(this.userDetails)
             .subscribe(
                 (data) => {
                     //this.router.navigate(['/home']);
-                    if(data){
-                      resetForm.reset();
-                      this.successMessage = true;
-                      setTimeout(() => {
-                        this.successMessage = false;
-                      }, 9000);
-                      this.header.close();
-                    }
-                    else{
-                      this.errorMessage = true;
-                      setTimeout(() => {
-                        this.errorMessage = false;
-                      }, 9000);
-                    }
+                    resetForm.reset();
+                    this.successMessage = true;
+                    setTimeout(() => {
+                      this.successMessage = false;
+                    }, 9000);
+                    this.header.close();
                 },
                 (error) => {
-                    console.log(error);
+                  this.errorMessage = true;
+                  setTimeout(() => {
+                    this.errorMessage = false;
+                  }, 9000);
                 });
     }
 

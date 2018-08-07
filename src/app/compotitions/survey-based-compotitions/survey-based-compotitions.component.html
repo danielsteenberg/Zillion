@@ -52,15 +52,15 @@
   <div class="row" *ngIf="!term">
     <div class="col-12" *ngFor="let image of selectedContent">
       <div class="card allCompetitions">
-        <img class="card-img-top rounded img-thumbnail" src="./assets/zillionCompotitions/{{image.url}}" (click)="open(enterComp, image)">
+        <img class="card-img-top rounded img-thumbnail" src="./assets/zillionCompotitions/{{image.url}}" alt="Survey Based Competitions" (click)="open(enterComp, image)">
       </div>
     </div>
   </div>
 
   <div class="row" *ngIf="term">
-    <div [ngClass]="mobile ? 'col-12' : 'col-4'" *ngFor="let image of allCompotitions |filter:term">
+    <div [ngClass]="mobile ? 'col-12' : 'col-4'" *ngFor="let image of allCompotitions | filter:term">
       <div class="card allCompetitions">
-        <img class="card-img-top rounded img-thumbnail" src="./assets/zillionCompotitions/{{image.url}}" (click)="open(enterComp, image)">
+        <img class="card-img-top rounded img-thumbnail" src="./assets/zillionCompotitions/{{image.url}}" alt="Survey Based Competitions" (click)="open(enterComp, image)">
       </div>
     </div>
   </div>
